@@ -1,0 +1,94 @@
+
+/*
+create table Invoices 
+(
+invoice_id int identity(1,1) not null,
+product_id int,
+invoice_time datetime,
+[user_id] int,
+amount float
+)
+
+insert into Invoices(product_id,invoice_time,[user_id],amount)
+values (121,'2020-06-22 19:10:25',101,500),
+(122,'2020-06-29 11:02:32',121,640),
+(121,'2020-07-02 02:10:06',251,500),
+(131,'2020-07-04 04:06:51',162,230),
+(269,'2020-07-04 04:06:12',83,750),
+(710,'2020-07-20 03:13:23',105,900),
+(903,'2020-07-11 16:04:04',156,1000),
+(114,'2020-07-17 17:38:01',209,150),
+(200,'2020-07-18 10:56:57',137,115),
+(131,'2020-07-22 13:49:07',148,230),
+(269,'2020-07-28 16:43:22',201,750),
+(561,'2020-07-29 19:31:29',186,450),
+(131,'2020-07-30 21:09:37',209,230),
+(111,'2020-08-01 23:01:19',101,700),
+(122,'2020-08-01 07:54:03',121,640)
+
+---------------------------------------------------------------------
+
+create table User_Activtiy
+(
+[user_id] int,
+event_type nvarchar(255),
+product_type nvarchar(255),
+created_at datetime 
+)
+
+
+insert into User_Activtiy([user_id],event_type,product_type,created_at)
+values (112, 'EndSession','APEX','2020-08-03 03:06:01'),
+(112, 'StartSession','APEX','2020-08-01 04:11:56'),
+(232, 'EndSession','Bot','2020-07-10 03:13:23'),
+(468, 'EndSession','Bot','2020-08-04 21:45:48'),
+(115, 'StartSession','Bot','2019-07-13 00:00:00'),
+(242, 'StartSession','Bot','2018-12-03 00:00:00'),
+(131, 'StartSession','Bot','2018-12-15 00:00:00')
+
+---------------------------------------------------------------------
+
+create table Product_Description
+(
+Id int identity(121,1) not null,
+[description] nvarchar(1000)
+)
+
+insert into Product_Description([description])
+values('{"description":[{"found_in":"Brazil","class_type":"A","Total_elements":"16","color_variants":"3"}],"product_type":"Apex"}'),
+('{"description":[{"found_in":"England","class_type":"B","Total_elements":"07","color_variants":"6"}],"product_type":"BOT"}'),
+('{"description":[{"found_in":"Nigeria","class_type":"A","Total_elements":"11","color_variants":"2"}],"product_type":"EDGE"}'),
+('{"description":[{"found_in":"Australia","class_type":"C","Total_elements":"9","color_variants":"1"}],"product_type":"FURRY"}')
+
+select * from Invoices
+select * from User_Activtiy
+select * from Product_Description
+
+*/
+
+--Query 1
+with cte as
+(
+select ROW_NUMBER() over (order by sum(amount) asc) Ranking
+,product_id [Product Id],sum(amount) [Total_Amount] from Invoices group by product_id 
+)
+select [Product Id],[Total_Amount] from cte where Ranking=1 
+
+--Query 2
+select month(invoice_time) [Mnth], b.event_type, count(invoice_id) TotalInvoices
+from Invoices a
+left join User_Activtiy b
+on a.[user_id] = b.[user_id]
+where year(invoice_time)=2020
+group by month(invoice_time), b.event_type
+
+--Query 3
+with cte as
+(
+select [user_id]
+,ROW_NUMBER() over (partition by [user_id] order by [user_id]) Ranking
+from User_Activtiy
+where event_type='StartSession'
+and created_at>= GETDATE()-40
+)
+select [user_id] from cte where ranking=1
