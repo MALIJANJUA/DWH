@@ -1,0 +1,121 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/12/2020 5:52:16 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SAHD-C"
+  DTS:CreatorName="TECHNT\SAHD"
+  DTS:DTSID="{6F84B316-2608-46AC-A363-AFC6D5CF914F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="Package2"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{FAD1E6ED-C2D7-470F-AA5A-6FFD7AC03B79}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PTDWDATDV2A.RDL00005_Landing]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D84434A9-91B0-4525-B505-B984AD302A57}"
+      DTS:ObjectName="PTDWDATDV2A.RDL00005_Landing">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PTDWDATDV2A;Initial Catalog=RDL00005_Landing;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{00bf2959-68d1-41ba-b80f-888362ecae19}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D84434A9-91B0-4525-B505-B984AD302A57}"
+          SQLTask:SqlStatementSource="IF OBJECT_ID('RDL00005_Landing.UPT.TempTeamMember', 'U') IS NOT NULL &#xA;  DROP TABLE RDL00005_Landing.UPT.TempTeamMember; &#xA;&#xA;&#xA;SELECT TeamMemberNumber, &#xA;&#x9;Acronym,&#xA;&#x9;case when [name] = '' then '' else substring&#x9;([name],1,charindex(',',[Name])-1) end as &#x9;FirstName,&#xA;       &#x9;substring([Name],charindex(',',[Name])+1,len&#x9;([Name])) LastName, &#xA;&#x9; JobTitle,&#xA;&#x9; Department,&#xA;&#x9; City,&#xA;&#x9; StateProvince,&#xA;&#x9; Country,&#xA;&#x9; BusinessUnit,&#xA;&#x9; BusinessGroup,&#xA;&#x9; Ext_Date&#xA;INTO RDL00005_Landing.UPT.TempTeamMember&#xA;FROM RDL00005_Staging.UPT.REPORT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{db825c44-4e1e-4932-ae26-5a777346ca43}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task 1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D84434A9-91B0-4525-B505-B984AD302A57}"
+          SQLTask:SqlStatementSource="WITH CTE AS&#xA;(SELECT TeamMemberNumber, Acronym, FirstName, LastName, JobTitle, Department, City, StateProvince, Country,&#xA;    BusinessUnit, BusinessGroup, Ext_Date,&#xA;ROW_NUMBER() OVER(PARTITION BY TeamMemberNumber ORDER BY TeamMemberNumber)&#xA;RNK&#xA;FROM RDL00005_Landing.UPT.TempTeamMember &#xA;)&#xA;&#xA;&#xA;DELETE FROM CTE&#xA;WHERE RNK &gt; 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{DAD4EA2D-2BDA-4BE8-9F40-85AC10BA45AE}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Execute SQL Task 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="476,101" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Execute SQL Task 1"
+          TopLeft="469,244" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="556.25,143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,101"
+              Start="0,0"
+              End="0,93.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,93.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

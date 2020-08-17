@@ -1,0 +1,2498 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/15/2020 11:38:57 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SAHD-C"
+  DTS:CreatorName="TECHNT\SAHD"
+  DTS:DTSID="{ECC633EB-6C6B-4656-A9BC-25D00254A93E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="Dim"
+  DTS:PackageType="5"
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{54B6D0C7-84AA-4EFF-8465-6B5F09F0DC5E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{5CC049FB-4E15-47A8-82A5-75EE2CD84F57}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="4105"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\najdedatatrsf\datatransferts\BI_Other_Source\PTG\UPT\rapportupt.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Employee Number"
+              DTS:DTSID="{CA2EE1A0-CD93-46E7-BE08-D515591DB88F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="First Name"
+              DTS:DTSID="{38296B5A-C896-4F9F-AF88-B6E9826C6206}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Last Name"
+              DTS:DTSID="{96C62B00-8BD9-47B5-929C-1BA50E539D8E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Department"
+              DTS:DTSID="{AE480C45-3589-466C-BF9D-9808102B65AF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Job Title"
+              DTS:DTSID="{00B7605B-95BC-4297-8D9C-6405AE982750}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{B3DFBE51-3571-41F7-9BA4-16F7E200FDFD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StateProvince"
+              DTS:DTSID="{D8396DF4-8768-47AF-9A4B-8CB3EA852E95}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country"
+              DTS:DTSID="{0D8EC388-8C41-4E5C-BBC9-9C596262DCF1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Course Name"
+              DTS:DTSID="{CBB5093A-C1E5-4091-A28D-93CDEBB321D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vendor"
+              DTS:DTSID="{09DF4DCD-12BF-43DD-B948-B52575714826}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Enrollment Status"
+              DTS:DTSID="{B677AB46-2884-4B5E-9B55-5B994CDFA6DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date Complete"
+              DTS:DTSID="{6CD9C4F2-5F46-4722-8949-3BC2506248DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date Added"
+              DTS:DTSID="{EB736994-75EC-4765-8A5C-0743B1CDCFE2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ExternalId"
+              DTS:DTSID="{66B46101-286C-4493-9646-717B97B06711}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Course Language"
+              DTS:DTSID="{BE219244-3E97-4C56-A260-5B124499BAE3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Learner Time"
+              DTS:DTSID="{EA63D9F5-690E-4915-B21D-99A833F43271}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BusinessGroup"
+              DTS:DTSID="{AEABE617-8FD8-4FB8-A7B8-46767C9CA36B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BusinessUnit"
+              DTS:DTSID="{EAD38551-D41E-4C76-A875-22BC68FD4C15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Category"
+              DTS:DTSID="{38D361A3-AA83-482F-BA5F-16A9BE0807A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Time Spent"
+              DTS:DTSID="{62653BCC-5503-4A67-85F9-954A6C04A29B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="instructor"
+              DTS:DTSID="{DDEFA96B-36E0-47AE-9F08-B820C74B263B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PTDWDATDV2A.RDL00005_Datawarehouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D5198D53-50D2-44B1-BA6F-550463034BB4}"
+      DTS:ObjectName="PTDWDATDV2A.RDL00005_Datawarehouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PTDWDATDV2A;Initial Catalog=RDL00005_Datawarehouse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PTDWDATDV2A.RDL00005_Staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8655AF61-F5EC-4F4C-B499-BAFC3CCBD527}"
+      DTS:ObjectName="PTDWDATDV2A.RDL00005_Staging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PTDWDATDV2A;Initial Catalog=RDL00005_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Add New Department"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D14F63C9-E799-4A4B-88E0-60578DCAC4BD}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Add New Department"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8655AF61-F5EC-4F4C-B499-BAFC3CCBD527}"
+          SQLTask:SqlStatementSource="insert into [RDL00005_Datawarehouse].[Dim].[UPT.Department] ([Department]) &#xA;SELECT DISTINCT  Department FROM  [UPT].FactRapportupt  S&#xA;WHERE  NOT EXISTS (SELECT * FROM [RDL00005_Datawarehouse].[Dim].[UPT.Department] D WHERE  D.[Department]=S.[Department])&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Course"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1D7F1536-AD0A-4C19-A137-E5CFCA617043}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Course"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8655AF61-F5EC-4F4C-B499-BAFC3CCBD527}"
+          SQLTask:SqlStatementSource="INSERT INTO  [RDL00005_Datawarehouse].[Dim].[UPT.CourseName] (CourseName,ExternalId,CourseLanguage ,Category ) &#xA;SELECT DISTINCT CourseName,ExternalId,CourseLanguage ,Category  FROM [UPT].FactRapportupt  S&#xA;WHERE NOT EXISTS (SELECT * FROM   [RDL00005_Datawarehouse].[Dim].[UPT.CourseName] D WHERE D.CourseName=S.CourseName)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Instructor"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{62DA3EDC-35D5-4575-A89E-65353A36F7E5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Instructor"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8655AF61-F5EC-4F4C-B499-BAFC3CCBD527}"
+          SQLTask:SqlStatementSource="insert into [RDL00005_Datawarehouse].[Dim].[UPT.Instructor] ( Instructor) &#xA;SELECT DISTINCT Instructor FROM [UPT].FactRapportupt   S&#xA;WHERE NOT EXISTS (SELECT * FROM [RDL00005_Datawarehouse].[Dim].[UPT.Instructor] D WHERE   &#xA;&#x9;&#x9;&#x9;S.Instructor  =D.Instructor )&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Location"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{730C0E47-9C10-4DCA-9C8F-F92D9A2F6299}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Location"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8655AF61-F5EC-4F4C-B499-BAFC3CCBD527}"
+          SQLTask:SqlStatementSource="insert into [RDL00005_Datawarehouse].[Dim].[UPT.Location] ( City,[StateProvince],[Country] ) &#xA;SELECT DISTINCT  City,[StateProvince],[Country] FROM [UPT].FactRapportupt   S&#xA;WHERE NOT EXISTS (SELECT * FROM [RDL00005_Datawarehouse].[Dim].[UPT.Location]  D WHERE   &#xA;&#x9;&#x9;S.City=D.City AND S.StateProvince=D.StateProvince AND &#x9;S.Country  =D.Country )&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Team Member"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6B244449-03B7-416C-A0FA-AF1265629A35}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Team Member"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8655AF61-F5EC-4F4C-B499-BAFC3CCBD527}"
+          SQLTask:SqlStatementSource="INSERT INTO [RDL00005_Datawarehouse].[Dim].[UPT.Team_Member] ( [Address_Number],[Job_Category_Desc_EN],[Acronym],[First_Name],[Last_Name],[PT_Group],[PT_Business_Unit] )&#xA;SELECT DISTINCT  TeamMemberNumber,LEFT(JobTitle,30) AS JobTitle,Acronym,&#xA; SUBSTRING(WorkerName, 1,  CHARINDEX(',', WorkerName)  -1) ,&#xA; &#xA; RIGHT(WorkerName, LEN(WorkerName) -  CHARINDEX(',', WorkerName)  -1)&#xA; &#xA; ,BusinessGroup,BusinessUnit FROM  [RDL00005_Staging].[UPT].FactRapportupt  S&#xA;WHERE  NOT EXISTS (SELECT * FROM [RDL00005_Datawarehouse].[Dim].[UPT.Team_Member]D WHERE  D.[Address_Number]=S.TeamMemberNumber)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TeamMember"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{D8FBD88D-6592-45C0-A7BF-AFCAA7906CEA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TeamMember"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\TeamMember\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\TeamMember\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TeamMember\Data Conversion.Inputs[Data Conversion Input].Columns[TeamMemberNumber]"
+                      cachedDataType="i4"
+                      cachedName="TeamMemberNumber"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[TeamMemberNumber]" />
+                    <inputColumn
+                      refId="Package\TeamMember\Data Conversion.Inputs[Data Conversion Input].Columns[JobTitle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="JobTitle"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[JobTitle]" />
+                    <inputColumn
+                      refId="Package\TeamMember\Data Conversion.Inputs[Data Conversion Input].Columns[BusinessGroup]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="BusinessGroup"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[BusinessGroup]" />
+                    <inputColumn
+                      refId="Package\TeamMember\Data Conversion.Inputs[Data Conversion Input].Columns[BusinessUnit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="BusinessUnit"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[BusinessUnit]" />
+                    <inputColumn
+                      refId="Package\TeamMember\Data Conversion.Inputs[Data Conversion Input].Columns[Acronym]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Acronym"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[Acronym]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\TeamMember\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TeamMemberNumber]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TeamMemberNumber]"
+                      name="Copy of TeamMemberNumber"
+                      precision="8"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[TeamMemberNumber]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of JobTitle]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="30"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of JobTitle]"
+                      name="Copy of JobTitle"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[JobTitle]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BusinessGroup]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BusinessGroup]"
+                      name="Copy of BusinessGroup"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[BusinessGroup]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BusinessUnit]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BusinessUnit]"
+                      name="Copy of BusinessUnit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[BusinessUnit]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Acronym]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Acronym]"
+                      name="Copy of Acronym"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[Acronym]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\TeamMember\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TeamMember\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\TeamMember\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TeamMember\Derived Column.Inputs[Derived Column Input].Columns[WorkerName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="WorkerName"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[WorkerName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TeamMember\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\TeamMember\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TeamMember\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\TeamMember\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      name="Derived Column 1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE]([LEFT](#{Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[WorkerName]},[FINDSTRING](#{Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[WorkerName]},",",1)),",","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(LEFT(WorkerName,FINDSTRING(WorkerName,",",1)),",","")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\TeamMember\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\TeamMember\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 2]"
+                      name="Derived Column 2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[RIGHT](#{Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[WorkerName]},[LEN](#{Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[WorkerName]}) - [FINDSTRING](#{Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[WorkerName]},",",1))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">RIGHT(WorkerName,LEN(WorkerName) - FINDSTRING(WorkerName,",",1))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TeamMember\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\TeamMember\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TeamMember\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TeamMember\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TeamMember\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TeamMember\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TeamMember\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Dim].[UPT.Team_Member]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TeamMember\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[PTDWDATDV2A.RDL00005_Datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[PTDWDATDV2A.RDL00005_Datawarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of TeamMemberNumber]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of TeamMemberNumber"
+                      cachedPrecision="8"
+                      externalMetadataColumnId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Address_Number]"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TeamMemberNumber]" />
+                    <inputColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 1]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Derived Column 1"
+                      externalMetadataColumnId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[First_Name]"
+                      lineageId="Package\TeamMember\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]" />
+                    <inputColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Derived Column 2"
+                      externalMetadataColumnId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Last_Name]"
+                      lineageId="Package\TeamMember\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 2]" />
+                    <inputColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of JobTitle]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Copy of JobTitle"
+                      externalMetadataColumnId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Job_Category_Desc_EN]"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of JobTitle]" />
+                    <inputColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of BusinessUnit]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Copy of BusinessUnit"
+                      externalMetadataColumnId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PT_Business_Unit]"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BusinessUnit]" />
+                    <inputColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of BusinessGroup]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Copy of BusinessGroup"
+                      externalMetadataColumnId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PT_Group]"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BusinessGroup]" />
+                    <inputColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of Acronym]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Copy of Acronym"
+                      externalMetadataColumnId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Acronym]"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Acronym]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id_Team_Member]"
+                      dataType="i4"
+                      name="Id_Team_Member" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Address_Number]"
+                      dataType="numeric"
+                      name="Address_Number"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[First_Name]"
+                      dataType="wstr"
+                      length="40"
+                      name="First_Name" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Last_Name]"
+                      dataType="wstr"
+                      length="40"
+                      name="Last_Name" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Acronym]"
+                      dataType="wstr"
+                      length="20"
+                      name="Acronym" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Company_Home]"
+                      dataType="wstr"
+                      length="5"
+                      name="Company_Home" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cost_Center]"
+                      dataType="wstr"
+                      length="12"
+                      name="Cost_Center" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cost_Center_Home]"
+                      dataType="wstr"
+                      length="12"
+                      name="Cost_Center_Home" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pay_Status]"
+                      dataType="wstr"
+                      length="1"
+                      name="Pay_Status" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pay_Class]"
+                      dataType="wstr"
+                      length="1"
+                      name="Pay_Class" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Union_Code]"
+                      dataType="wstr"
+                      length="6"
+                      name="Union_Code" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Job_Type]"
+                      dataType="wstr"
+                      length="6"
+                      name="Job_Type" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Daily_Hours]"
+                      dataType="numeric"
+                      name="Daily_Hours"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date_Started]"
+                      dataType="dbTimeStamp"
+                      name="Date_Started" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Job_Category]"
+                      dataType="wstr"
+                      length="3"
+                      name="Job_Category" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Job_Category_Desc_EN]"
+                      dataType="wstr"
+                      length="30"
+                      name="Job_Category_Desc_EN" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Job_Category_Desc_FR]"
+                      dataType="wstr"
+                      length="30"
+                      name="Job_Category_Desc_FR" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Home_Base]"
+                      dataType="wstr"
+                      length="3"
+                      name="Home_Base" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Home_Base_Desc]"
+                      dataType="wstr"
+                      length="65"
+                      name="Home_Base_Desc" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PT_Business_Unit]"
+                      dataType="wstr"
+                      length="30"
+                      name="PT_Business_Unit" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PT_Group]"
+                      dataType="wstr"
+                      length="30"
+                      name="PT_Group" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Manager]"
+                      dataType="numeric"
+                      name="Manager"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Change_Effective_Date]"
+                      dataType="dbTimeStamp"
+                      name="Change_Effective_Date" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Change_End_Date]"
+                      dataType="dbTimeStamp"
+                      name="Change_End_Date" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Current_Flag]"
+                      dataType="ui1"
+                      name="Current_Flag" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date_Terminated]"
+                      dataType="dbTimeStamp"
+                      name="Date_Terminated" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TeamMember\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TeamMember\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TeamMember\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TeamMember\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TeamMember\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TeamMember\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [Dim].[UPT.Team_Member] SET [First_Name] = ?,[Job_Category_Desc_EN] = ?,[Last_Name] = ?,[PT_Business_Unit] = ?,[PT_Group] = ? WHERE [Address_Number] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TeamMember\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[PTDWDATDV2A.RDL00005_Datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[PTDWDATDV2A.RDL00005_Datawarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of TeamMemberNumber]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of TeamMemberNumber"
+                      cachedPrecision="8"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TeamMemberNumber]" />
+                    <inputColumn
+                      refId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].Columns[Derived Column 1]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Derived Column 1"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\TeamMember\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]" />
+                    <inputColumn
+                      refId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of JobTitle]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Copy of JobTitle"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of JobTitle]" />
+                    <inputColumn
+                      refId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].Columns[Derived Column 2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Derived Column 2"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\TeamMember\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 2]" />
+                    <inputColumn
+                      refId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of BusinessUnit]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Copy of BusinessUnit"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BusinessUnit]" />
+                    <inputColumn
+                      refId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of BusinessGroup]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Copy of BusinessGroup"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BusinessGroup]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="40"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="30"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="40"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="30"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="30"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="numeric"
+                      name="Param_5"
+                      precision="8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TeamMember\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TeamMember\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TeamMember\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TeamMember\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TeamMember\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[UPT].[FactRapportupt]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TeamMember\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[PTDWDATDV2A.RDL00005_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[PTDWDATDV2A.RDL00005_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[TeamMemberNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TeamMemberNumber]"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[TeamMemberNumber]"
+                      name="TeamMemberNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[Acronym]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Acronym]"
+                      length="100"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[Acronym]"
+                      name="Acronym"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[WorkerName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WorkerName]"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[WorkerName]"
+                      name="WorkerName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[Department]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Department]"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[Department]"
+                      name="Department"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[JobTitle]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[JobTitle]"
+                      length="100"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[JobTitle]"
+                      name="JobTitle"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[StateProvince]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StateProvince]"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[StateProvince]"
+                      name="StateProvince"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[CourseName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CourseName]"
+                      length="150"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[CourseName]"
+                      name="CourseName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vendor]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Vendor]"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vendor]"
+                      name="Vendor"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnrollmentStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EnrollmentStatus]"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnrollmentStatus]"
+                      name="EnrollmentStatus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateComplete]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateComplete]"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateComplete]"
+                      name="DateComplete"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateAdded]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateAdded]"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateAdded]"
+                      name="DateAdded"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[ExternalId]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ExternalId]"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[ExternalId]"
+                      name="ExternalId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[CourseLanguage]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CourseLanguage]"
+                      length="10"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[CourseLanguage]"
+                      name="CourseLanguage"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[LearnerTime]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LearnerTime]"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[LearnerTime]"
+                      name="LearnerTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[BusinessGroup]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BusinessGroup]"
+                      length="10"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[BusinessGroup]"
+                      name="BusinessGroup"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[BusinessUnit]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BusinessUnit]"
+                      length="10"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[BusinessUnit]"
+                      name="BusinessUnit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      length="100"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[Category]"
+                      name="Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[TimeSpent]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TimeSpent]"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[TimeSpent]"
+                      name="TimeSpent"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[Instructor]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Instructor]"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[Instructor]"
+                      name="Instructor"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TeamMemberNumber]"
+                      dataType="i4"
+                      name="TeamMemberNumber" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Acronym]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Acronym" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WorkerName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="WorkerName" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Department]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Department" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[JobTitle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="JobTitle" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StateProvince]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="StateProvince" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CourseName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="CourseName" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Vendor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vendor" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EnrollmentStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EnrollmentStatus" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateComplete]"
+                      dataType="dbTimeStamp"
+                      name="DateComplete" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateAdded]"
+                      dataType="dbTimeStamp"
+                      name="DateAdded" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ExternalId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ExternalId" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CourseLanguage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CourseLanguage" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LearnerTime]"
+                      dataType="r4"
+                      name="LearnerTime" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BusinessGroup]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="BusinessGroup" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BusinessUnit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="BusinessUnit" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TimeSpent]"
+                      dataType="i2"
+                      name="TimeSpent" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Instructor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Instructor" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TeamMemberNumber]"
+                      dataType="i4"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TeamMemberNumber]"
+                      name="TeamMemberNumber" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Acronym]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Acronym]"
+                      name="Acronym" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WorkerName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WorkerName]"
+                      name="WorkerName" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Department]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Department]"
+                      name="Department" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[JobTitle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[JobTitle]"
+                      name="JobTitle" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StateProvince]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StateProvince]"
+                      name="StateProvince" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CourseName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CourseName]"
+                      name="CourseName" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Vendor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Vendor]"
+                      name="Vendor" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EnrollmentStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EnrollmentStatus]"
+                      name="EnrollmentStatus" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateComplete]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateComplete]"
+                      name="DateComplete" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateAdded]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateAdded]"
+                      name="DateAdded" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ExternalId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ExternalId]"
+                      name="ExternalId" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CourseLanguage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CourseLanguage]"
+                      name="CourseLanguage" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LearnerTime]"
+                      dataType="r4"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LearnerTime]"
+                      name="LearnerTime" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BusinessGroup]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BusinessGroup]"
+                      name="BusinessGroup" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BusinessUnit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BusinessUnit]"
+                      name="BusinessUnit" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      name="Category" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TimeSpent]"
+                      dataType="i2"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TimeSpent]"
+                      name="TimeSpent" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Instructor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Instructor]"
+                      name="Instructor" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TeamMember\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Address_Number], [First_Name], [Job_Category_Desc_EN], [Last_Name], [PT_Business_Unit], [PT_Group] FROM [Dim].[UPT.Team_Member]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TeamMember\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[PTDWDATDV2A.RDL00005_Datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[PTDWDATDV2A.RDL00005_Datawarehouse]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of TeamMemberNumber]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of TeamMemberNumber"
+                      cachedPrecision="8"
+                      externalMetadataColumnId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Address_Number]"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TeamMemberNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Derived Column 1]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Derived Column 1"
+                      externalMetadataColumnId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[First_Name]"
+                      lineageId="Package\TeamMember\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[JobTitle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="JobTitle"
+                      externalMetadataColumnId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Job_Category_Desc_EN]"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[JobTitle]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Derived Column 2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Derived Column 2"
+                      externalMetadataColumnId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Last_Name]"
+                      lineageId="Package\TeamMember\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 2]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[BusinessUnit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="BusinessUnit"
+                      externalMetadataColumnId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PT_Business_Unit]"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[BusinessUnit]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[BusinessGroup]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="BusinessGroup"
+                      externalMetadataColumnId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PT_Group]"
+                      lineageId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output].Columns[BusinessGroup]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of JobTitle]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Copy of JobTitle"
+                      externalMetadataColumnId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Job_Category_Desc_EN]"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of JobTitle]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of BusinessUnit]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Copy of BusinessUnit"
+                      externalMetadataColumnId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PT_Business_Unit]"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BusinessUnit]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of BusinessGroup]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Copy of BusinessGroup"
+                      externalMetadataColumnId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PT_Group]"
+                      lineageId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BusinessGroup]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Address_Number]"
+                      dataType="numeric"
+                      name="Address_Number"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[First_Name]"
+                      dataType="wstr"
+                      length="40"
+                      name="First_Name" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Job_Category_Desc_EN]"
+                      dataType="wstr"
+                      length="30"
+                      name="Job_Category_Desc_EN" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Last_Name]"
+                      dataType="wstr"
+                      length="40"
+                      name="Last_Name" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PT_Business_Unit]"
+                      dataType="wstr"
+                      length="30"
+                      name="PT_Business_Unit" />
+                    <externalMetadataColumn
+                      refId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PT_Group]"
+                      dataType="wstr"
+                      length="30"
+                      name="PT_Group" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TeamMember\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TeamMember\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TeamMember\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TeamMember\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TeamMember\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TeamMember\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\TeamMember.Paths[Changing Attribute Updates Output]"
+              endId="Package\TeamMember\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\TeamMember\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\TeamMember.Paths[Data Conversion Output]"
+              endId="Package\TeamMember\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Data Conversion Output"
+              startId="Package\TeamMember\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\TeamMember.Paths[Derived Column Output]"
+              endId="Package\TeamMember\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\TeamMember\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\TeamMember.Paths[New Output]"
+              endId="Package\TeamMember\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\TeamMember\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\TeamMember.Paths[OLE DB Source Output]"
+              endId="Package\TeamMember\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\TeamMember\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Vendor"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5B9FE48E-78A9-4DCE-8A24-C87415C6CF31}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Vendor"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8655AF61-F5EC-4F4C-B499-BAFC3CCBD527}"
+          SQLTask:SqlStatementSource="insert into [RDL00005_Datawarehouse].[Dim].[UPT.Vendor] ( Vendor) &#xA;SELECT DISTINCT Vendor FROM [UPT].FactRapportupt   S&#xA;WHERE NOT EXISTS (SELECT * FROM [RDL00005_Datawarehouse].[Dim].[UPT.Vendor] D WHERE   &#xA;&#x9;&#x9;&#x9;S.Vendor  =D.Vendor )&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{77CB1672-40ED-41ED-B607-33D2646D1A1A}"
+      DTS:From="Package\Add New Department"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Course" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{EA0C993D-6BE0-4D66-B554-813F86D161C3}"
+      DTS:From="Package\Course"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Location" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{482BE824-D130-4880-8710-7AE0D808909A}"
+      DTS:From="Package\Location"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Vendor" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{D24FCFDC-3A3D-4B03-B3E3-1341ECBCC9AA}"
+      DTS:From="Package\Vendor"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Instructor" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{B127E794-F618-4169-95F8-CE28F8642A25}"
+      DTS:From="Package\Instructor"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Team Member" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\Add New Department"
+          TopLeft="89.142858660951,2.44705885784848" />
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\TeamMember"
+          TopLeft="122.857144949388,83.2000011668486" />
+        <NodeLayout
+          Size="110.4,41.6"
+          Id="Package\Course"
+          TopLeft="361.142863293083,72.1882363065304" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="179.142858660951,44.0470588578485">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="237.200004632132,28.1411774486819"
+              Start="0,0"
+              End="237.200004632132,20.6411774486819">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.070588724341" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.070588724341"
+                    Point2="0,14.070588724341"
+                    Point3="4,14.070588724341" />
+                  <mssgle:LineSegment
+                    End="233.200004632132,14.070588724341" />
+                  <mssgle:CubicBezierSegment
+                    Point1="233.200004632132,14.070588724341"
+                    Point2="237.200004632132,14.070588724341"
+                    Point3="237.200004632132,18.070588724341" />
+                  <mssgle:LineSegment
+                    End="237.200004632132,20.6411774486819" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="117.6,41.6"
+          Id="Package\Location"
+          TopLeft="333.142862816246,184.752943767561" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="416.342863293083,113.78823630653">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24.4000004768371,70.9647074610305"
+              Start="0,0"
+              End="-24.4000004768371,63.4647074610305">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.4823537305152" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.4823537305152"
+                    Point2="0,35.4823537305152"
+                    Point3="-4,35.4823537305152" />
+                  <mssgle:LineSegment
+                    End="-20.4000004768371,35.4823537305152" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20.4000004768371,35.4823537305152"
+                    Point2="-24.4000004768371,35.4823537305152"
+                    Point3="-24.4000004768371,39.4823537305152" />
+                  <mssgle:LineSegment
+                    End="-24.4000004768371,63.4647074610305" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="112,41.6"
+          Id="Package\Vendor"
+          TopLeft="254.285718616174,252.658827072856" />
+        <NodeLayout
+          Size="124.8,41.6"
+          Id="Package\Instructor"
+          TopLeft="244.000004155295,335.858828239705" />
+        <NodeLayout
+          Size="146.4,41.6"
+          Id="Package\Team Member"
+          TopLeft="117.142859137788,368.047063962811" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="391.942862816246,226.352943767561">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-81.657144200072,26.3058833052956"
+              Start="0,0"
+              End="-81.657144200072,18.8058833052956">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.15294165264778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.15294165264778"
+                    Point2="0,13.1529416526478"
+                    Point3="-4,13.1529416526478" />
+                  <mssgle:LineSegment
+                    End="-77.657144200072,13.1529416526478" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-77.657144200072,13.1529416526478"
+                    Point2="-81.657144200072,13.1529416526478"
+                    Point3="-81.657144200072,17.1529416526478" />
+                  <mssgle:LineSegment
+                    End="-81.657144200072,18.8058833052956" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="308.342861385735,294.258827072856">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.6000011668486"
+              Start="0,0"
+              End="0,34.1000011668486">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.1000011668486" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="244.000004155295,345.547063962811">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-53.6571450175071,22.5"
+              Start="0,0"
+              End="-53.6571450175071,15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-49.6571450175071,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-49.6571450175071,0"
+                    Point2="-53.6571450175071,0"
+                    Point3="-53.6571450175071,4" />
+                  <mssgle:LineSegment
+                    End="-53.6571450175071,15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\TeamMember">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\TeamMember\OLE DB Source"
+          TopLeft="235.9,5.49999999999995" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\TeamMember\Derived Column"
+          TopLeft="234.3,107.1" />
+        <EdgeLayout
+          Id="Package\TeamMember.Paths[OLE DB Source Output]"
+          TopLeft="310.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\TeamMember\Slowly Changing Dimension"
+          TopLeft="206.7,310.3" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\TeamMember\Data Conversion"
+          TopLeft="233.1,208.7" />
+        <EdgeLayout
+          Id="Package\TeamMember.Paths[Derived Column Output]"
+          TopLeft="310.7,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TeamMember.Paths[Data Conversion Output]"
+          TopLeft="310.7,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\TeamMember\Insert Destination"
+          TopLeft="5.50000000000004,411.9" />
+        <EdgeLayout
+          Id="Package\TeamMember.Paths[New Output]"
+          TopLeft="277.366666666667,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-190.666666666667,60"
+              Start="0,0"
+              End="-190.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2748091603053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2748091603053"
+                    Point2="0,24.2748091603053"
+                    Point3="-4,24.2748091603053" />
+                  <mssgle:LineSegment
+                    End="-186.666666666667,24.2748091603053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-186.666666666667,24.2748091603053"
+                    Point2="-190.666666666667,24.2748091603053"
+                    Point3="-190.666666666667,28.2748091603053" />
+                  <mssgle:LineSegment
+                    End="-190.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-122.424720052083,29.2748091603053,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\TeamMember\OLE DB Command"
+          TopLeft="228.3,411.9" />
+        <EdgeLayout
+          Id="Package\TeamMember.Paths[Changing Attribute Updates Output]"
+          TopLeft="344.033333333333,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.3333333333333,60"
+              Start="0,0"
+              End="-33.3333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2748091603054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2748091603054"
+                    Point2="0,24.2748091603054"
+                    Point3="-4,24.2748091603054" />
+                  <mssgle:LineSegment
+                    End="-29.3333333333333,24.2748091603054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.3333333333333,24.2748091603054"
+                    Point2="-33.3333333333333,24.2748091603054"
+                    Point3="-33.3333333333333,28.2748091603054" />
+                  <mssgle:LineSegment
+                    End="-33.3333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-95.2005729166667,29.2748091603054,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\TeamMember\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\TeamMember\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{D5198D53-50D2-44B1-BA6F-550463034BB4}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[Dim].[UPT.Team_Member]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Acronym]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Acronym&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TeamMemberNumber]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Address_Number&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;First_Name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of JobTitle]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Job_Category_Desc_EN&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Derived Column.Outputs[Derived Column Output].Columns[Derived Column 2]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Last_Name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BusinessUnit]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;PT_Business_Unit&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BusinessGroup]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;PT_Group&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\TeamMember\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

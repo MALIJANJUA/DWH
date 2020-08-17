@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/12/2020 5:29:50 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SAHD-C"
+  DTS:CreatorName="TECHNT\SAHD"
+  DTS:DTSID="{F84440EC-E98C-4229-A22F-FFAB994880B6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{D1F4AAD3-7D68-4B48-B336-9CA555FB5642}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PTDWDATDV2A.RDL00005_Landing]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{AF931440-B1A0-4AB1-9017-1393AC60FF14}"
+      DTS:ObjectName="PTDWDATDV2A.RDL00005_Landing">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PTDWDATDV2A;Initial Catalog=RDL00005_Landing;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{aa14662d-271e-4933-b22e-c06e818077e6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AF931440-B1A0-4AB1-9017-1393AC60FF14}"
+          SQLTask:SqlStatementSource="WITH CTE AS&#xA;(SELECT CourseName, Instructor, CourseLanguage, ExternalId, Category, Vendor, Skills, CourseType, CourseSolution, Ext_Date,&#xA;ROW_NUMBER() OVER(PARTITION BY CourseName ORDER BY CourseName)&#xA;RNK&#xA;FROM [RDL00005_Landing].[UPT].[TempCourse]&#xA;)&#xA;&#xA;&#xA;DELETE FROM CTE&#xA;WHERE RNK &gt; 1&#xA;&#xA;&#xA;&#xA;&#xA;UPDATE [RDL00005_Landing].[UPT].[TempCourse]&#xA;SET CourseName = REPLACE(CourseName,'–','-')&#xA;&#xA;&#xA;&#xA;&#xA;UPDATE [RDL00005_Landing].[UPT].[TempCourse]&#xA;SET Skills = SUBSTRING(CourseName, 0, CHARINDEX('-', CourseName));&#xA;&#xA;UPDATE [RDL00005_Landing].[UPT].[TempCourse]&#xA;SET Skills = 'PE-EP-PG-MP'&#xA;WHERE Skills = 'MP'&#xA;OR Skills = 'PG'&#xA;OR Skills = 'PE';&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;UPDATE [RDL00005_Landing].[UPT].[TempCourse] &#xA;SET CourseType = 'Cours avec instructeur'&#xA;where UPPER(Category) = 'U LIVE'&#xA;&#xA;UPDATE [RDL00005_Landing].[UPT].[TempCourse]&#xA;SET CourseType = 'Programme d’études'&#xA;where UPPER(Category) = 'U JOURNEY'&#xA;OR    UPPER(Skills) = 'PRIOR'&#xA;OR    UPPER(Skills) = 'RIGOR'&#xA;OR    UPPER(Skills) = 'PE-EP-PG-MP'&#xA;&#xA;UPDATE [RDL00005_Landing].[UPT].[TempCourse]&#xA;SET CourseType = 'Cours en ligne'&#xA;WHERE upper(Category) = 'MINI U'&#xA;or    upper(Category) = 'U LEARNING'&#xA;or    CourseType = '****************************************************************************************************************'&#xA;&#xA;&#xA;&#xA;UPDATE [RDL00005_Landing].[UPT].[TempCourse]&#xA;SET CourseSolution = 'Mini U / U Learning'&#xA;WHERE CourseType = 'Cours en ligne'&#xA;&#xA;UPDATE [RDL00005_Landing].[UPT].[TempCourse]&#xA;SET CourseSolution = 'U Journey'&#xA;WHERE UPPER(Skills) = 'PRIOR'&#xA;OR    UPPER(Skills) = 'RIGOR'&#xA;&#xA;UPDATE [RDL00005_Landing].[UPT].[TempCourse]&#xA;SET CourseSolution = 'U Program'&#xA;WHERE UPPER(Skills) = 'PE-EP-PG-MP'&#xA;&#xA;UPDATE [RDL00005_Landing].[UPT].[TempCourse]&#xA;SET CourseSolution = 'U Live'&#xA;WHERE CourseType = 'Cours avec instructeur'&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8bc5e62e-1701-4b68-b6aa-0ba74996d9c0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task 1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AF931440-B1A0-4AB1-9017-1393AC60FF14}"
+          SQLTask:SqlStatementSource="&#xA;&#xA;&#xA;&#xA;SELECT  [CourseName]&#xA;      ,[CourseLanguage]&#xA;      ,[Category]&#xA;      ,[ExternalId]&#xA;      ,[Vendor]&#xA;      ,[Instructor]&#xA;      ,'****************************************************************************************************************' as Skills&#xA;      ,'****************************************************************************************************************' as CourseType&#xA;      ,'****************************************************************************************************************' as CourseSolution&#xA;      ,[Ext_Date]&#xA;INTO [RDL00005_Landing].[UPT].[TempCourse]&#xA;FROM [RDL00005_Staging].[UPT].[REPORT] " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{a4f47102-6a61-421c-b6f4-b8eb94d513ea}"
+      DTS:From="Package\Execute SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Execute SQL Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="448,310" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Execute SQL Task 1"
+          TopLeft="444,120" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="529.75,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,148"
+              Start="0,0"
+              End="0,140.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,140.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

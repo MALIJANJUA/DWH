@@ -1,0 +1,131 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/30/2020 3:51:23 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SAHD-C"
+  DTS:CreatorName="TECHNT\SAHD"
+  DTS:DTSID="{6139F178-91F5-476C-955B-837427D9E514}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="DimCourse"
+  DTS:PackageType="5"
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{36DE863F-6CA7-49CC-B4D7-F3EB9A225741}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PTDWDATDV2A.RDL00005_Datawarehouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F59989CE-C346-4A9E-9934-52857551AFE5}"
+      DTS:ObjectName="PTDWDATDV2A.RDL00005_Datawarehouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PTDWDATDV2A;Initial Catalog=RDL00005_Datawarehouse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PTDWDATDV2A.RDL00005_Landing]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CE13F9FE-9666-4DF3-8EB6-2E02337A5F32}"
+      DTS:ObjectName="PTDWDATDV2A.RDL00005_Landing">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PTDWDATDV2A;Initial Catalog=RDL00005_Landing;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FCBD42FE-1DCA-4D49-BD16-675DFC7B359A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F59989CE-C346-4A9E-9934-52857551AFE5}"
+          SQLTask:SqlStatementSource="WITH CTE AS&#xA;(SELECT CourseName, Instructor, CourseLanguage, ExternalId, Category, Vendor, Skills, CourseType,&#xA;ROW_NUMBER() OVER(PARTITION BY CourseName ORDER BY CourseName)&#xA;RNK&#xA;FROM [RDL00005_Datawarehouse].[UPT].[DimCourse] &#xA;)&#xA;&#xA;&#xA;DELETE FROM CTE&#xA;WHERE RNK &gt; 1&#xA;&#xA;&#xA;&#xA;&#xA;UPDATE [RDL00005_Datawarehouse].[UPT].[DimCourse] &#xA;SET CourseName = REPLACE(CourseName,'–','-')&#xA;&#xA;&#xA;&#xA;&#xA;UPDATE [RDL00005_Datawarehouse].[UPT].[DimCourse] &#xA;SET Skills = SUBSTRING(CourseName, 0, CHARINDEX('-', CourseName));&#xA;&#xA;UPDATE [RDL00005_Datawarehouse].[UPT].[DimCourse] &#xA;SET Skills = 'PE-EP-PG-MP'&#xA;WHERE Skills = 'MP'&#xA;OR Skills = 'PG'&#xA;OR Skills = 'PE';&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;UPDATE [RDL00005_Datawarehouse].[UPT].[DimCourse] &#xA;SET CourseType = 'Cours avec instructeur'&#xA;where UPPER(Category) = 'U LIVE'&#xA;&#xA;UPDATE [RDL00005_Datawarehouse].[UPT].[DimCourse] &#xA;SET CourseType = 'Programme d’études'&#xA;where UPPER(Category) = 'U JOURNEY'&#xA;OR    UPPER(Skills) = 'PRIOR'&#xA;OR    UPPER(Skills) = 'RIGOR'&#xA;OR    UPPER(Skills) = 'PE-EP-PG-MP'&#xA;&#xA;UPDATE [RDL00005_Datawarehouse].[UPT].[DimCourse] &#xA;SET CourseType = 'Cours en ligne'&#xA;WHERE upper(Category) = 'MINI U'&#xA;or    upper(Category) = 'U LEARNING'&#xA;or    CourseType = '****************************************************************************************************************'&#xA;&#xA;&#xA;&#xA;UPDATE [RDL00005_Datawarehouse].[UPT].[DimCourse] &#xA;SET CourseSolution = 'Mini U / U Learning'&#xA;WHERE CourseType = 'Cours en ligne'&#xA;&#xA;UPDATE [RDL00005_Datawarehouse].[UPT].[DimCourse] &#xA;SET CourseSolution = 'U Journey'&#xA;WHERE UPPER(Skills) = 'PRIOR'&#xA;OR    UPPER(Skills) = 'RIGOR'&#xA;&#xA;UPDATE [RDL00005_Datawarehouse].[UPT].[DimCourse] &#xA;SET CourseSolution = 'U Program'&#xA;WHERE UPPER(Skills) = 'PE-EP-PG-MP'&#xA;&#xA;UPDATE [RDL00005_Datawarehouse].[UPT].[DimCourse] &#xA;SET CourseSolution = 'U Live'&#xA;WHERE CourseType = 'Cours avec instructeur'&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6DE1D742-863B-44AE-8E46-8C99FDEAAE09}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task 1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F59989CE-C346-4A9E-9934-52857551AFE5}"
+          SQLTask:SqlStatementSource="SELECT  [CourseName]&#xA;      ,[CourseLanguage]&#xA;      ,[Category]&#xA;      ,[ExternalId]&#xA;      ,[Vendor]&#xA;      ,[Instructor]&#xA;      ,'****************************************************************************************************************' as Skills&#xA;      ,'****************************************************************************************************************' as CourseType&#xA;      ,'****************************************************************************************************************' as CourseSolution&#xA;INTO  [RDL00005_Datawarehouse].[UPT].[DimCourse] &#xA;FROM [RDL00005_Landing].[UPT].[REPORT] " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{9F4C59E9-9806-422E-8500-F36E30E846E1}"
+      DTS:From="Package\Execute SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Execute SQL Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="137,226" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Execute SQL Task 1"
+          TopLeft="133,36" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="218.75,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,148"
+              Start="0,0"
+              End="0,140.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,140.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

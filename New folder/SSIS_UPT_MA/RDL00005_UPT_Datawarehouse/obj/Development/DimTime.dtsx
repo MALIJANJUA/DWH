@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/31/2020 1:36:56 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SAHD-C"
+  DTS:CreatorName="TECHNT\SAHD"
+  DTS:DTSID="{29E4C1EE-EE28-4834-BFC9-A11E1CBF3A9B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="DimTime"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{4EE1729F-CB2D-488D-9576-0603EC37DECE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PTDWDATDV2A.RDL00005_Datawarehouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{AF9659D8-27F7-48FB-844D-85647FF043ED}"
+      DTS:ObjectName="PTDWDATDV2A.RDL00005_Datawarehouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PTDWDATDV2A;Initial Catalog=RDL00005_Datawarehouse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6AC68868-5A50-4304-9F5B-0DA240408081}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AF9659D8-27F7-48FB-844D-85647FF043ED}"
+          SQLTask:SqlStatementSource="select coalesce(rep.DateAdded, tm.date_started) [Date]&#xA;into #TBL1&#xA;from RDL00005_Landing.UPT.REPORT rep&#xA;full join RDL00005_Datawarehouse.dbo.D_Team_Member_JDE tm&#xA;on rep.TeamMemberNumber = tm.Address_Number&#xA;&#xA;&#xA;&#xA;select cast([Date] as Date) [Date], YEAR([Date]) [Year],&#xA;&#x9;   case when MONTH([Date]) &gt;= 1 and MONTH([Date]) &lt; 4 then 'Quarter 1'&#xA;&#x9;&#x9;&#x9;when MONTH([Date]) &gt;= 4 and MONTH([Date]) &lt; 7 then 'Quarter 2'&#xA;&#x9;&#x9;&#x9;when MONTH([Date]) &gt;= 7 and MONTH([Date]) &lt; 10 then 'Quarter 3'&#xA;&#x9;&#x9;&#x9;else 'Quarter 4'&#xA;&#x9;&#x9;end as [Quarter],&#xA;&#x9;&#x9;MONTH([Date]) Month_Number,&#xA;&#x9;&#x9;DATENAME(MONTH, [Date]) [Month],&#xA;&#x9;&#x9;DATEPART(WK, [Date]) Week_Number,&#xA;&#x9;&#x9;DAY([Date]) Day_Number,&#xA;&#x9;&#x9;DATENAME(weekday, [Date]) [Day]&#xA;Into RDL00005_Datawarehouse.UPT.DimDate&#xA;from #TBL1;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F6279A23-9130-4CB4-AD7A-AD857F8CEAAD}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task 1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AF9659D8-27F7-48FB-844D-85647FF043ED}"
+          SQLTask:SqlStatementSource="With CTE AS&#xA;(select [date],&#xA; ROW_NUMBER() over(partition by [date] order by [date])&#xA; RNK&#xA; from RDL00005_Datawarehouse.UPT.DimDate&#xA;)&#xA;&#xA;delete from CTE&#xA;where rnk &gt; 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{DB51BF04-BD2A-483F-93E6-909ACD45FBDC}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Execute SQL Task 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="293,147" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Execute SQL Task 1"
+          TopLeft="285,280" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="372.75,189">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,91"
+              Start="0,0"
+              End="0,83.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,83.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/31/2020 1:37:20 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SAHD-C"
+  DTS:CreatorName="TECHNT\SAHD"
+  DTS:DTSID="{4D4885F6-0639-4B66-BAD7-396CF3D9C83E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="Fact"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{B1024C2C-E6C9-4C24-9C20-3A10C13120C6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PTDWDATDV2A.RDL00005_Datawarehouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3F350EAD-7E0C-4369-8DDF-DCF9DEC2A3A0}"
+      DTS:ObjectName="PTDWDATDV2A.RDL00005_Datawarehouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PTDWDATDV2A;Initial Catalog=RDL00005_Datawarehouse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{847E346C-1143-4967-8314-6138C5AC13A9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3F350EAD-7E0C-4369-8DDF-DCF9DEC2A3A0}"
+          SQLTask:SqlStatementSource="insert into RDL00005_Datawarehouse.UPT.FactUPT&#xA;(TeamMemberNumber, LearnerTime, TimeSpent, EnrollmentStatus, CourseName, DateAdded, DateCompleted, HireDate)&#xA;&#xA;select TeamMemberNumber, LearnerTime, TimeSpent, &#x9;EnrollmentStatus, CourseName,&#xA;&#x9;cast(DateAdded &#x9;as date) DateAdded, cast(DateCompleted as &#x9;date) DateCompleted,&#xA;       &#x9;cast(tm_jde.Date_Started as date) HireDate&#xA;--Into RDL00005_Datawarehouse.UPT.FactUPT&#xA;from RDL00005_Landing.UPT.REPORT rep_land&#xA;left join RDL00005_Datawarehouse.dbo.D_Team_Member_JDE tm_jde&#xA;on rep_land.TeamMemberNumber = tm_jde.Address_Number&#xA;&#xA;WHERE NOT EXISTS (SELECT TeamMemberNumber, LearnerTime, TimeSpent, EnrollmentStatus, CourseName, DateAdded, DateCompleted, HireDate&#xA;FROM RDL00005_Datawarehouse.UPT.FactUPT FT1&#xA;WHERE FT1.TeamMemberNumber = rep_land.TeamMemberNumber&#xA;AND FT1.LearnerTime = rep_land.LearnerTime&#xA;AND FT1.TimeSpent = rep_land.TimeSpent&#xA;AND FT1.EnrollmentStatus = rep_land.EnrollmentStatus&#xA;AND FT1.CourseName = rep_land.CourseName&#xA;AND FT1.DateAdded = rep_land.DateAdded&#xA;AND FT1.DateCompleted = rep_land.DateCompleted&#xA;AND FT1.HireDate = tm_jde.Date_Started)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="334,92" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
